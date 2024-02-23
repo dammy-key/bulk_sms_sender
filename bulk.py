@@ -1,11 +1,16 @@
+import os
 import tkinter as tk
 from tkinter import ttk
-import nexmo  # Import the Nexmo library
+from dotenv import load_dotenv
+import nexmo
+
+# Load environment variables from .env
+load_dotenv()
 
 # Nexmo API credentials
-api_key = '20a4e141'
-api_secret = 'ovLxsAtFlv75gTD6'
-nexmo_phone_number = '+2348188015899'
+api_key = os.getenv("API_KEY")
+api_secret = os.getenv("API_SECRET")
+nexmo_phone_number = os.getenv("NEXMO_PHONE_NUMBER")
 
 # Function to send SMS
 def send_sms():
